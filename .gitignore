@@ -1,3 +1,6 @@
+.gitignore
+icon.png
+
 # === APPLE FILE SYSTEM CRAP ===
 # General
 .DS_Store
