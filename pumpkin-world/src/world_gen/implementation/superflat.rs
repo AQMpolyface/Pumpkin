@@ -1,5 +1,3 @@
-use pumpkin_core::math::vector2::Vector2;
-
 use crate::{
     biome::Biome,
     block::block_state::BlockState,
@@ -10,6 +8,7 @@ use crate::{
         Seed,
     },
 };
+use pumpkin_core::math::vector2::Vector2;
 
 #[expect(dead_code)]
 pub type SuperflatGenerator = GenericGenerator<SuperflatBiomeGenerator, SuperflatTerrainGenerator>;
@@ -52,13 +51,19 @@ impl TerrainGenerator for SuperflatTerrainGenerator {
     }
 
     /*
-    fn generate_block(&self, at: BlockCoordinates, _: Biome) -> BlockState {
-        match *at.y {
+    fn generate_block(
+        &self,
+        _chunk_pos: &Vector2<i32>,
+        _at: pumpkin_core::math::vector3::Vector3<i32>,
+        _biome: Biome,
+    ) -> BlockState {
+        match _at.y {
             -64 => block_state!("bedrock"),
             -63..=-62 => block_state!("dirt"),
             -61 => block_state!("grass_block"),
             _ => BlockState::AIR,
         }
     }
+
     */
 }
